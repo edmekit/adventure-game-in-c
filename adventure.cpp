@@ -1,7 +1,7 @@
 #include <iostream>
 
 using namespace std;
-int health, mainclass;
+int health, mainclass, path, action;
 string name;
 
 int IntOnly(const string& prompt) 
@@ -61,4 +61,57 @@ int main()
             type[2].weapon = "Bow";
             cout << type[2].name << " has " << type[2].health << " health and is wielding a " << type[2].weapon << "." << endl;
         }
+    
+    cout << endl;
+
+    cout << "Congratulations, " << name << "! You are now a " << type[mainclass -1].name << "." << endl;
+    cout << "Let's head out to the world." << endl;
+
+    cout << endl;
+
+    cout << "Infront of you is a path." << endl;
+    cout << "You can go left or right. The left path is a forest, and the right path is a cave." << endl;
+
+    cout << endl;
+
+    path = IntOnly("Which way to you want to go? \n1. Left\n2. Right\n");
+
+    if (path == 1)
+    {
+        cout << endl;
+        cout << "You have entered the forest." << endl;
+        cout << "You encountered a goblin! What do you do?" << endl;
+        action = IntOnly("1. Attack\n2. Hide\n");
+
+        if (action == 1)
+        {
+            cout << "You attacked the goblin and it called its allies lmao" << endl;
+            cout << "You died." << endl;
+        }
+        
+        else if  (action == 2)
+        {
+            cout << "Boo! The goblin found you" << endl;
+            cout << "You died." << endl;
+        }
+    }
+    else if (path == 2)
+    {   
+        cout << endl;
+        cout << "You have entered the cave." << endl;
+        cout << "You encountered a skeleton! What do you do?" << endl;
+        action = IntOnly("1. Attack\n2. Hide\n");
+
+        if (action == 1)
+        {
+            cout << "You attacked the skeleton and broke it apart." << endl;
+            cout << "You only remembered the fact that skeletons are immortal while trying to collect the loots." << endl;
+            cout << "You died." << endl;
+        }
+
+        else if (action == 2)
+        {
+            cout << "Congrats! You found the only way to survive this part." << endl; 
+        }
+    }
 }
